@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <Import Project="..\..\properties\service_fabric_managed_netframework.props" />
+  <Import Project="..\..\properties\service_fabric_managed_stylecop.props" />
+  <PropertyGroup>
+    <AssemblyName>Microsoft.ServiceFabric.AspNetCore.Hosting.Abstractions</AssemblyName>
+    <RootNamespace>Microsoft.ServiceFabric.AspNetCore.Hosting</RootNamespace>
+    <TargetFramework>$(DefaultTargetFramework)</TargetFramework>
+  </PropertyGroup>
+  
+  <!--
+  Note, this is abstractions project and meant to have minimal dependency.
+  Please do not add other dependency heres.
+  
+  If you need to introduce other dependency, please consider:
+  1. Do it in a concreate library project. or 
+  2. Create another new abstractions project with that dependency
+  -->
+  <ItemGroup>
+    <!--This is needed for IServiceProviderAdapter interface-->
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="$(AspNetCoreVersion)" />
+  
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="$(AspNetCoreVersion)" />
+    <PackageReference Include="Microsoft.ServiceFabric.Services" Version="$(NugetPkg_Version_Microsoft_ServiceFabric_Services)" />
+   
+  </ItemGroup>
+  
+</Project>

@@ -1,0 +1,24 @@
+<Project>
+  
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DefaultTargetFramework>netstandard2.0</DefaultTargetFramework>
+  </PropertyGroup>
+  
+  <!-- Global properties for self-packing projects -->
+  <!-- To set up a project to self-pack, set the following property in the project:
+          <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  -->
+  <PropertyGroup>
+    <AspNetCoreVersion>2.1.1</AspNetCoreVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>$(OutputPath)\$(AssemblyName).xml</DocumentationFile>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+</Project>

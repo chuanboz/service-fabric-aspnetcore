@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <Import Project="..\..\properties\service_fabric_managed_netframework.props" />
+  <Import Project="..\..\properties\service_fabric_managed_stylecop.props" />
+  
+  <PropertyGroup>
+    <RootNamespace>Microsoft.ServiceFabric.AspNetCore.Hosting.TestSupport</RootNamespace>
+    <AssemblyName>Microsoft.ServiceFabric.AspNetCore.Hosting.TestSupport</AssemblyName>
+    <TargetFramework>$(DefaultTargetFramework)</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="$(AspNetCoreVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="$(AspNetCoreVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="$(AspNetCoreVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="$(AspNetCoreVersion)" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(AspNetCoreVersion)" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="$(AspNetCoreVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="$(AspNetCoreVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="$(AspNetCoreVersion)" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="$(AspNetCoreVersion)" />
+    <PackageReference Include="Microsoft.ServiceFabric.Services" Version="$(NugetPkg_Version_Microsoft_ServiceFabric_Services)" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.ServiceFabric.AspNetCore.Hosting.Abstractions\Microsoft.ServiceFabric.AspNetCore.Hosting.Abstractions.csproj" />
+    <ProjectReference Include="..\Microsoft.ServiceFabric.AspNetCore.Hosting\Microsoft.ServiceFabric.AspNetCore.Hosting.csproj" />
+  </ItemGroup>
+
+</Project>
