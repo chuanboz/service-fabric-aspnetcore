@@ -1,14 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Fabric.Description;
-using System.Text;
-using System.Xml.Linq;
-using Microsoft.Extensions.Configuration;
+// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License (MIT). See License.txt in the repo root for license information.
+// ------------------------------------------------------------
 
 namespace Microsoft.ServiceFabric.AspNetCore.TestRuntime
 {
-    public class TestServiceTypes : KeyedCollection<string, ServiceTypeDescription>
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Fabric.Description;
+    using System.Text;
+    using System.Xml.Linq;
+    using Microsoft.Extensions.Configuration;
+
+    internal class TestServiceTypes : KeyedCollection<string, ServiceTypeDescription>
     {
         private IConfiguration config;
 
@@ -27,20 +32,20 @@ namespace Microsoft.ServiceFabric.AspNetCore.TestRuntime
                     // TODO, FIX THE KIND
                     var desc = new TestServiceTypeDescription(ServiceDescriptionKind.Stateless)
                     {
-                        ServiceTypeName = item.Attribute(nameof(TestServiceTypeDescription.ServiceTypeName)).Value
+                        ServiceTypeName = item.Attribute(nameof(TestServiceTypeDescription.ServiceTypeName)).Value,
                     };
 
                     this.Add(desc);
                 }
             }
-            else if(config["ServiceTypeNames"] != null)
+            else if (config["ServiceTypeNames"] != null)
             {
                 foreach (var item in config["ServiceTypeNames"].Split(','))
                 {
                     // TODO, FIX THE KIND
                     var desc = new TestServiceTypeDescription(ServiceDescriptionKind.Stateless)
                     {
-                        ServiceTypeName = item
+                        ServiceTypeName = item,
                     };
 
                     this.Add(desc);

@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Fabric.Description;
-using System.Linq;
-using System.Xml.Linq;
-using Microsoft.Extensions.Configuration;
+// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License (MIT). See License.txt in the repo root for license information.
+// ------------------------------------------------------------
 
 namespace Microsoft.ServiceFabric.AspNetCore.TestRuntime
 {
+    using System;
+    using System.Collections.ObjectModel;
+    using System.Fabric.Description;
+    using System.Linq;
+    using System.Xml.Linq;
+    using Microsoft.Extensions.Configuration;
+
     internal class TestEndPoints : KeyedCollection<string, EndpointResourceDescription>
     {
         private IConfiguration config;
@@ -31,8 +36,9 @@ namespace Microsoft.ServiceFabric.AspNetCore.TestRuntime
                         Name = item.Attribute(nameof(EndpointResourceDescription.Name)).Value,
                         EndpointType = EndpointType.Input, // item.Attribute(nameof(EndpointResourceDescription.EndpointType)).Value,
                         IpAddressOrFqdn = item.Attribute(nameof(EndpointResourceDescription.IpAddressOrFqdn))?.Value,
-                        //Port = int.Parse(item.Attribute(nameof(EndpointResourceDescription.Port)).Value),
-                        Protocol = (EndpointProtocol)Enum.Parse(typeof(EndpointProtocol), item.Attribute(nameof(EndpointResourceDescription.Protocol)).Value, true)
+
+                        // Port = int.Parse(item.Attribute(nameof(EndpointResourceDescription.Port)).Value),
+                        Protocol = (EndpointProtocol)Enum.Parse(typeof(EndpointProtocol), item.Attribute(nameof(EndpointResourceDescription.Protocol)).Value, true),
                     };
 
                     this.Add(endpoint);

@@ -22,8 +22,6 @@ namespace Microsoft.ServiceFabric.AspNetCore.TestRuntime
     {
         private readonly IConfiguration config;
         private readonly XElement manifest;
-        private readonly string serviceManifetName;
-        private readonly string serviceManifestVersion;
 
         private bool disposedValue = false; // To detect redundant calls
 
@@ -44,6 +42,7 @@ namespace Microsoft.ServiceFabric.AspNetCore.TestRuntime
             this.Endpoints = new TestEndPoints(config, this.manifest);
         }
 
+#pragma warning disable CS0067
         public event EventHandler<PackageAddedEventArgs<CodePackage>> CodePackageAddedEvent;
 
         public event EventHandler<PackageModifiedEventArgs<CodePackage>> CodePackageModifiedEvent;
@@ -61,6 +60,7 @@ namespace Microsoft.ServiceFabric.AspNetCore.TestRuntime
         public event EventHandler<PackageModifiedEventArgs<DataPackage>> DataPackageModifiedEvent;
 
         public event EventHandler<PackageRemovedEventArgs<DataPackage>> DataPackageRemovedEvent;
+#pragma warning restore CS0067
 
         /// <inheritdoc/>
         public string ApplicationName { get; set; }
@@ -137,12 +137,12 @@ namespace Microsoft.ServiceFabric.AspNetCore.TestRuntime
 
         public string GetServiceManifestName()
         {
-            return this.serviceManifetName;
+            return this.config["ServiceManifetName"];
         }
 
         public string GetServiceManifestVersion()
         {
-            return this.serviceManifestVersion;
+            return this.config["ServiceManifetVersion"];
         }
 
         public KeyedCollection<string, ServiceTypeDescription> GetServiceTypes()
