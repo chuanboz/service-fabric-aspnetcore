@@ -47,6 +47,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.ServiceFabric.Asp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.ServiceFabric.AspNetCore.Hosting.TestSupport", "src\Microsoft.ServiceFabric.AspNetCore.Hosting.TestSupport\Microsoft.ServiceFabric.AspNetCore.Hosting.TestSupport.csproj", "{7B07C563-9251-43E4-9148-73208E2F3452}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{40C674F5-25E6-45CB-BF42-AA9E0CEB395E}"
+EndProject
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "TestApp", "samples\TestApp\TestApp.sfproj", "{3F356F25-FEAB-4DD5-86DA-CA65A92066B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KestrelTestService", "samples\KestrelTestService\KestrelTestService.csproj", "{0C8329CA-C2F2-4F1F-A1FB-13794CFA9B4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +145,22 @@ Global
 		{7B07C563-9251-43E4-9148-73208E2F3452}.Release|Any CPU.ActiveCfg = Release|x64
 		{7B07C563-9251-43E4-9148-73208E2F3452}.Release|x64.ActiveCfg = Release|x64
 		{7B07C563-9251-43E4-9148-73208E2F3452}.Release|x64.Build.0 = Release|x64
+		{3F356F25-FEAB-4DD5-86DA-CA65A92066B7}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{3F356F25-FEAB-4DD5-86DA-CA65A92066B7}.Debug|x64.ActiveCfg = Debug|x64
+		{3F356F25-FEAB-4DD5-86DA-CA65A92066B7}.Debug|x64.Build.0 = Debug|x64
+		{3F356F25-FEAB-4DD5-86DA-CA65A92066B7}.Debug|x64.Deploy.0 = Debug|x64
+		{3F356F25-FEAB-4DD5-86DA-CA65A92066B7}.Release|Any CPU.ActiveCfg = Release|x64
+		{3F356F25-FEAB-4DD5-86DA-CA65A92066B7}.Release|x64.ActiveCfg = Release|x64
+		{3F356F25-FEAB-4DD5-86DA-CA65A92066B7}.Release|x64.Build.0 = Release|x64
+		{3F356F25-FEAB-4DD5-86DA-CA65A92066B7}.Release|x64.Deploy.0 = Release|x64
+		{0C8329CA-C2F2-4F1F-A1FB-13794CFA9B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C8329CA-C2F2-4F1F-A1FB-13794CFA9B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C8329CA-C2F2-4F1F-A1FB-13794CFA9B4C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0C8329CA-C2F2-4F1F-A1FB-13794CFA9B4C}.Debug|x64.Build.0 = Debug|Any CPU
+		{0C8329CA-C2F2-4F1F-A1FB-13794CFA9B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C8329CA-C2F2-4F1F-A1FB-13794CFA9B4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C8329CA-C2F2-4F1F-A1FB-13794CFA9B4C}.Release|x64.ActiveCfg = Release|Any CPU
+		{0C8329CA-C2F2-4F1F-A1FB-13794CFA9B4C}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -160,6 +182,8 @@ Global
 		{89ECFFC8-E2A6-4F8B-B565-0D5615BBB520} = {DFB5E99B-B17D-4FD4-8CA8-24C399606962}
 		{4B185323-C08D-4FDC-AD7D-F0BCBA9C4478} = {DFB5E99B-B17D-4FD4-8CA8-24C399606962}
 		{7B07C563-9251-43E4-9148-73208E2F3452} = {DFB5E99B-B17D-4FD4-8CA8-24C399606962}
+		{3F356F25-FEAB-4DD5-86DA-CA65A92066B7} = {40C674F5-25E6-45CB-BF42-AA9E0CEB395E}
+		{0C8329CA-C2F2-4F1F-A1FB-13794CFA9B4C} = {40C674F5-25E6-45CB-BF42-AA9E0CEB395E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2CDABF99-A026-479B-B672-736D0A8C9A37}
